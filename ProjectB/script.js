@@ -1,6 +1,6 @@
 
 console.log("my script loads")
-let a = 1;
+let texts = [], rn, T;
 function setup(){
     let cnv = createCanvas(700,700);
     cnv.parent("canvasContainer")
@@ -74,61 +74,25 @@ function draw() {
     image(pH[cH], -150, -153-height/6);
     image(pHe[cHe], -150, -153-height/6);
   pop();
-  
-}
-class Face{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
-}
-class Hair{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
-}
-class Cloth{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
-}
-class Pant{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
-}
-class Headdress{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
-}
-class Handheld{
-  constructor(){
-    
-  }
-  draw(){
-    
-  }
+  T="Hello there!";
+  texts.push(T);
+  T="How is everything going on?";
+  texts.push(T);
+  T="Have a nice day!";
+  texts.push(T);
+  T="Wish you good luck!";
+  texts.push(T);
+  T="You are doing a good job!";
+  texts.push(T);
 }
 class Hand{
   constructor(){
     
   }
   draw(){
+    
+  }
+  act(){
     
   }
 }
@@ -163,6 +127,9 @@ function mouseClicked(){
     if(cHa==5){
       cHa=0
     }
+              }else if(mouseX>=width*11/18){
+                rn = random(0,4);
+                createParagraph(texts[rn])
               }
 }
 
@@ -176,6 +143,3 @@ function createParagraph(text){
 }
 
 
-function mousePressed(){
-    createParagraph(a);
-}
