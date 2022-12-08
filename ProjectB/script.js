@@ -2,7 +2,7 @@
 console.log("my script loads")
 let a = 1;
 function setup(){
-    let cnv = createCanvas(200,200);
+    let cnv = createCanvas(700,700);
     cnv.parent("canvasContainer")
     background(0);
 }
@@ -72,6 +72,7 @@ function draw() {
     // rect(0,-height/6,300);
     image(pF[cF], -150, -150-height/6);
     image(pH[cH], -150, -153-height/6);
+    image(pHe[cHe], -150, -153-height/6);
   pop();
   
 }
