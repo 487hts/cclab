@@ -128,7 +128,7 @@ function mouseClicked(){
       cHa=0
     }
               }else if(mouseX>=width*11/18){
-                rn = random(0,4);
+                rn = random(0,1,2,3,4);
                 createParagraph(texts[rn])
               }
 }
