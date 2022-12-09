@@ -2,9 +2,19 @@
 console.log("my script loads")
 let texts = [], rn, T;
 function setup(){
-    let cnv = createCanvas(700,700);
+    let cnv = createCanvas(windowWidth,windowHeight);
     cnv.parent("canvasContainer")
     background(0);
+    T="Hello there!";
+  texts.push(T);
+  T="How is everything going on?";
+  texts.push(T);
+  T="Have a nice day!";
+  texts.push(T);
+  T="Wish you good luck!";
+  texts.push(T);
+  T="You are doing a good job!";
+  texts.push(T);
 }
 let pF = [], pH = [], pC = [], pP = [], pHe = [], pHa = [];
 let F, H, C, P, He, Ha; 
@@ -74,16 +84,7 @@ function draw() {
     image(pH[cH], -150, -153-height/6);
     image(pHe[cHe], -150, -153-height/6);
   pop();
-  T="Hello there!";
-  texts.push(T);
-  T="How is everything going on?";
-  texts.push(T);
-  T="Have a nice day!";
-  texts.push(T);
-  T="Wish you good luck!";
-  texts.push(T);
-  T="You are doing a good job!";
-  texts.push(T);
+  
 }
 class Hand{
   constructor(){
@@ -128,7 +129,8 @@ function mouseClicked(){
       cHa=0
     }
               }else if(mouseX>=width*11/18){
-                rn = random(0,1,2,3,4);
+                rn = round(random(0,4));
+                console.log(texts[rn])
                 createParagraph(texts[rn])
               }
 }
@@ -138,6 +140,7 @@ function mouseClicked(){
 
 function createParagraph(text){
     const para = document.createElement("p");
+    // text = "njknjkj"
     para.innerHTML = text;
     document.getElementById("textHolder").appendChild(para);
 }
