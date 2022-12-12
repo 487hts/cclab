@@ -1,11 +1,11 @@
-    // let aNewSlide, slides=[];
+// let aNewSlide, slides=[];
 let pF=[], pH=[], pC=[], pHe=[], pP=[];
-let lF=[], lH=[], lC=[], lHe=[], lP=[];
+let lpic=[];
 let cF=0, cH=0, cC=0, cHe=0, cP=0,c=5;
 let face, hair, cloth, headdress, pant;
 let pB, bpics=[];
 let sxs=[], sys=[];
-let lx;
+let lx,exi,exii,eyi,eyii;
 function preload(){
   //按钮们
   pB = loadImage("Headdress.png");
@@ -18,7 +18,7 @@ function preload(){
   bpics.push(pB);
   pB = loadImage("Pant.png");
   bpics.push(pB);
-  //头饰
+  //头饰3
   pB = loadImage("Head1.png");
   pHe.push(pB);
   pB = loadImage("Head2.png");
@@ -29,7 +29,7 @@ function preload(){
   pHe.push(pB);
   pB = loadImage("Head5.png");
   pHe.push(pB);
-  //头发
+  //头发2
   pB = loadImage("Hair1.png");
   pH.push(pB);
   pB = loadImage("Hair2.png");
@@ -40,7 +40,7 @@ function preload(){
   pH.push(pB);
   pB = loadImage("Hair5.png");
   pH.push(pB);
-  //脸
+  //脸1
   pB = loadImage("Face1.png");
   pF.push(pB);
   pB = loadImage("Face2.png");
@@ -51,7 +51,7 @@ function preload(){
   pF.push(pB);
   pB = loadImage("Face5.png");
   pF.push(pB);
-  //衣服
+  //衣服5
   pB = loadImage("Cloth1.png");
   pC.push(pB);
   pB = loadImage("Cloth2.png");
@@ -62,7 +62,7 @@ function preload(){
   pC.push(pB);
   pB = loadImage("Cloth5.png");
   pC.push(pB);
-  //裤子
+  //裤子4
   pB = loadImage("Pant1.png");
   pP.push(pB);
   pB = loadImage("Pant2.png");
@@ -83,15 +83,18 @@ function setup() {
   }
   lx  = width/10-40;
   background(220);
+  
 }
 
 function draw() {
   noStroke();
   fill(220);
   rect(0,height*5/8+30,width/10+236,height/4+46);
+  rect(width*2/3-200,height/2-300,400,600);
   for(let i = 1; i<=5; i++){
     buttons(i);
   }
+  
   rgbBar();
   strokeBar();
   // for(let j = 0; j<sxs.length; j++){
@@ -102,7 +105,22 @@ function draw() {
   // }
   stroke(0);
   strokeWeight(1);
-  line(lx,height*7/8+25,lx,height*7/8+75)
+  line(lx,height*7/8+25,lx,height*7/8+75);
+  lpic[0] = pF[cF];
+  lpic[1] = pH[cH];
+  lpic[2] = pHe[cHe];
+  lpic[3] = pP[cP];
+  lpic[4] = pC[cC];
+  for(let pics=0; pics<5; pics++){
+    image(lpic[pics],width*2/3-200,height/2-300);
+  }
+  fill(0);
+  exi = map(mouseX, 0,width,width*2/3-55,width*2/3-45);
+  exii = map(mouseX,0,width,width*2/3+50,width*2/3+60);
+  eyi = map(mouseY, 0,height, height/2-75, height/2-65);
+  eyii = map(mouseY, 0,height, height/2-80, height/2-70);
+  ellipse(exi,eyi,15,30);
+  ellipse(exii,eyii,15,30);
 }
 // class Slide{
 //   constructor(sx, sy){
@@ -127,7 +145,49 @@ function draw() {
 function mouseDragged(){
   //Head Hair Face Cloth Pant
   if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height/8-25 && mouseY<height/8+25){
-     cHe ++
+     cHe ++;
+    if(cHe >= c){
+      cHe = 0;
+    }
+     }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*2/8-25 && mouseY<height*2/8+25){
+              cH ++
+    if(cH >= c){
+      cH = 0;
+    }
+              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*3/8-25 && mouseY<height*3/8+25){
+              cF ++
+    if(cF >= c){
+      cF = 0;
+    }
+              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*4/8-25 && mouseY<height*4/8+25){
+              cC ++
+    if(cC >= c){
+      cC = 0;
+    }
+              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*5/8-25 && mouseY<height*5/8+25){
+              cP ++
+    if(cP >= c){
+      cP = 0;
+    }
+              }else if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4-25 && mouseY<height*3/4+15){
+                       sxs[0] = mouseX
+                       }else if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4+15 && mouseY<height*3/4+55){
+                       sxs[1] = mouseX
+                       }else if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4+55 && mouseY<height*3/4+95){
+                       sxs[2] = mouseX
+                       }else if(mouseX>=width/10-40 && mouseX<=width/10+140 && mouseY>height*7/8+25 && mouseY<height*7/8+75){
+                         lx = mouseX       
+                                }
+  else{
+    stroke(sxs[0]-width/10+30,sxs[1]-width/10+30,sxs[2]-width/10+30);
+    strokeWeight((lx-width/10+40)/6);
+    line(pmouseX, pmouseY, mouseX, mouseY);
+  }
+}
+function mouseClicked(){
+  //Head Hair Face Cloth Pant
+  if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height/8-25 && mouseY<height/8+25){
+     cHe ++;
     if(cHe >= c){
       cHe = 0;
     }
@@ -198,7 +258,7 @@ function rgbBar(){
   text("B",width/10-43, height*3/4+79);
   //显示数值
   for(let z = 0; z<3; z++){
-    text(sxs[z]-width/10+30, width/10-70, height*3/4+z*40);
+    text(round(sxs[z]-width/10+30), width/10-70, height*3/4+z*40);
   }
   //slide
   for(let num=0; num<3; num++){
@@ -221,6 +281,6 @@ function strokeBar(){
   rect(width/10-50, height*7/8+25,200,50)
   fill(0);
   text(round((lx-width/10+40)/6),width/10-70,height*7/8+50);
-  text("strokeBar",width/10+50,height/7/8+10);
+  text("strokeBar",width/10+20,height*7/8+20);
   triangle(width/10-40,height*7/8+50,width/10+140,height*7/8+35, width/10+140,height*7/8+65);
 }
