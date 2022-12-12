@@ -1,22 +1,22 @@
-let aNewPetol, petols=[], petolPic;
+let aNewPetol, petols=[], petolPic, bgp;
 function preload(){
     petolPic = loadImage("花瓣.png")
+    bgp = loadImage("背景1.png")
 }
 function setup(){
     let cnv = createCanvas(windowWidth,windowHeight);
     cnv.parent("canvasContainer")
-    background(255,255,255,0);
+    // background(255,255,255,0);
 }
 function draw(){
-    if (framecount == 30){
-        for(let i = 0; i<random(1,4); i++){
-            aNewPetol = new Petol(petolPic)
-            petols.push(aNewPetol);
-        }
+    image(bgp,0,0);
+    if (frameCount%30==0){
+        aNewPetol = new Petol(petolPic)
+        petols.push(aNewPetol);
     }
     for (let j = 0; j<petols.length; j++){
-        petols[petols.length-1].act();
-        petols[petols.length-1].draw();
+        petols[j].act();
+        petols[j].draw();
     }
     if (petols.length>=200){
         petols.splice(0,1);
@@ -32,7 +32,7 @@ class Petol{
             this.px = 0;
             this.py = random(0, width);
         }
-        this.scale = random(50,200);
+        this.scale = random(0,1);
         this.pic = Pic;
         this.pangle = 45;
     }
@@ -40,13 +40,13 @@ class Petol{
         push();
         translate(this.px+25, this.py+25)
         scale(this.scale);
-        rotate(this,pangle);
+        rotate(this.pangle);
         image(this.pic, -25,-25);
         pop();
     }
     act(){
-        this.px += random(-random(0, 1), random(1, 11));
-        this.py += random(-random(0, 1), random(1, 11));
-        this.pangle += random(5, 10);
+        this.px += 1;
+        this.py += 1;
+        this.pangle += 0.05
     }
 }
