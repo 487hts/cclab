@@ -119,8 +119,8 @@ function draw() {
   exii = map(mouseX,0,width,width*2/3+50,width*2/3+60);
   eyi = map(mouseY, 0,height, height/2-75, height/2-65);
   eyii = map(mouseY, 0,height, height/2-80, height/2-70);
-  ellipse(exi,eyi,15,30);
-  ellipse(exii,eyii,15,30);
+  ellipse(exi,eyi,18,30);
+  ellipse(exii,eyii,18,30);
 }
 // class Slide{
 //   constructor(sx, sy){
