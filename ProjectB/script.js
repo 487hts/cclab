@@ -143,33 +143,7 @@ function draw() {
 //   }
 // }
 function mouseDragged(){
-  //Head Hair Face Cloth Pant
-  if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height/8-25 && mouseY<height/8+25){
-     cHe ++;
-    if(cHe >= c){
-      cHe = 0;
-    }
-     }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*2/8-25 && mouseY<height*2/8+25){
-              cH ++
-    if(cH >= c){
-      cH = 0;
-    }
-              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*3/8-25 && mouseY<height*3/8+25){
-              cF ++
-    if(cF >= c){
-      cF = 0;
-    }
-              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*4/8-25 && mouseY<height*4/8+25){
-              cC ++
-    if(cC >= c){
-      cC = 0;
-    }
-              }else if(mouseX>width/10-50 && mouseX<width/10+50 && mouseY>height*5/8-25 && mouseY<height*5/8+25){
-              cP ++
-    if(cP >= c){
-      cP = 0;
-    }
-              }else if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4-25 && mouseY<height*3/4+15){
+    if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4-25 && mouseY<height*3/4+15){
                        sxs[0] = mouseX
                        }else if(mouseX>=width/10-30 && mouseX<=width/10+225 && mouseY>height*3/4+15 && mouseY<height*3/4+55){
                        sxs[1] = mouseX
@@ -180,7 +154,7 @@ function mouseDragged(){
                                 }
   else{
     stroke(sxs[0]-width/10+30,sxs[1]-width/10+30,sxs[2]-width/10+30);
-    strokeWeight((lx-width/10+40)/6);
+    strokeWeight((lx-width/10+40)/6+1);
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
@@ -222,7 +196,7 @@ function mouseClicked(){
                                 }
   else{
     stroke(sxs[0]-width/10+30,sxs[1]-width/10+30,sxs[2]-width/10+30);
-    strokeWeight((lx-width/10+40)/6);
+    strokeWeight((lx-width/10+40)/6+1);
     line(pmouseX, pmouseY, mouseX, mouseY);
   }
 }
@@ -280,7 +254,7 @@ function strokeBar(){
   fill(255);
   rect(width/10-50, height*7/8+25,200,50)
   fill(0);
-  text(round((lx-width/10+40)/6),width/10-70,height*7/8+50);
+  text(round((lx-width/10+40)/6)+1,width/10-70,height*7/8+50);
   text("strokeBar",width/10+20,height*7/8+20);
   triangle(width/10-40,height*7/8+50,width/10+140,height*7/8+35, width/10+140,height*7/8+65);
 }
