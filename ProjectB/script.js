@@ -19,15 +19,60 @@ function preload(){
   pB = loadImage("Pant.png");
   bpics.push(pB);
   //头饰
-  
+  pB = loadImage("Head1.png");
+  pHe.push(pB);
+  pB = loadImage("Head2.png");
+  pHe.push(pB);
+  pB = loadImage("Head3.png");
+  pHe.push(pB);
+  pB = loadImage("Head4.png");
+  pHe.push(pB);
+  pB = loadImage("Head5.png");
+  pHe.push(pB);
   //头发
-  
+  pB = loadImage("Hair1.png");
+  pH.push(pB);
+  pB = loadImage("Hair2.png");
+  pH.push(pB);
+  pB = loadImage("Hair3.png");
+  pH.push(pB);
+  pB = loadImage("Hair4.png");
+  pH.push(pB);
+  pB = loadImage("Hair5.png");
+  pH.push(pB);
   //脸
-  
+  pB = loadImage("Face1.png");
+  pF.push(pB);
+  pB = loadImage("Face2.png");
+  pF.push(pB);
+  pB = loadImage("Face3.png");
+  pF.push(pB);
+  pB = loadImage("Face4.png");
+  pF.push(pB);
+  pB = loadImage("Face5.png");
+  pF.push(pB);
   //衣服
-  
+  pB = loadImage("Cloth1.png");
+  pC.push(pB);
+  pB = loadImage("Cloth2.png");
+  pC.push(pB);
+  pB = loadImage("Cloth3.png");
+  pC.push(pB);
+  pB = loadImage("Cloth4.png");
+  pC.push(pB);
+  pB = loadImage("Cloth5.png");
+  pC.push(pB);
   //裤子
-  
+  pB = loadImage("Pant1.png");
+  pP.push(pB);
+  pB = loadImage("Pant2.png");
+  pP.push(pB);
+  pB = loadImage("Pant3.png");
+  pP.push(pB);
+  pB = loadImage("Pant4.png");
+  pP.push(pB);
+  pB = loadImage("Pant5.png");
+  pP.push(pB);
 }
 function setup() {
     let cnv = createCanvas(windowWidth,windowHeight);
