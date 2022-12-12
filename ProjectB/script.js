@@ -76,19 +76,19 @@ function preload(){
 }
 function setup() {
     let cnv = createCanvas(windowWidth,windowHeight);
-    cnv.parent("canvasContainer")
+    cnv.parent("canvasContainer");
   for (let s=0; s<3; s++){
     sxs.push(width/10-30);
     sys.push(height*3/4-5+s*40);
   }
   lx  = width/10-40;
-  background(220);
+  background(255);
   
 }
 
 function draw() {
   noStroke();
-  fill(220);
+  fill(255);
   rect(0,height*5/8+30,width/10+236,height/4+46);
   rect(width*2/3-200,height/2-300,400,600);
   for(let i = 1; i<=5; i++){
